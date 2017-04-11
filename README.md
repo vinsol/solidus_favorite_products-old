@@ -13,7 +13,7 @@ Installation
 Add solidus_favorite_products to your Gemfile:
 
 ```ruby
-gem 'solidus_favorite_products', github: 'vinsol/spree_favorite_products'
+gem 'solidus_favorite_products', github: 'vinsol/solidus_favorite_products'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -38,7 +38,7 @@ When testing your applications integration with this extension you may use it's 
 Simply add this require statement to your spec_helper:
 
 ```ruby
-require 'spree_favorite_products/factories'
+require 'solidus_favorite_products/factories'
 ```
 
 Contributing
