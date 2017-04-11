@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Provides basic authentication functionality for testing parts of your engine
-gem 'solidus', '2.1.0'
+gem 'solidus', '>= 2.1.0'
 gem 'solidus_auth_devise'
 
 gem 'byebug', '~> 9.0.6'
