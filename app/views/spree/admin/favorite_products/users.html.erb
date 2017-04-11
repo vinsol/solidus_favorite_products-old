@@ -15,7 +15,7 @@
       <% @users.each do |user| %>
         <tr>
           <td>
-            <%= user.email %>
+            <%= link_to user.email, edit_admin_user_path(user) %>
           </tr>
       <% end %>
     </tbody>

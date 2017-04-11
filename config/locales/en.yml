@@ -12,7 +12,8 @@ en:
         success: 'Product has been successfully marked as favorite'
     favorite_products_per_page: "Favorite Products Shown Per Page"
     favorite_products_settings: "Favorite Products Settings"
-    mark_as_favorite: "Mark as favorite"
-    unmark_as_favorite: "Unmark as favorite"
+    mark_as_favorite: "Mark As Favorite"
+    unmark_as_favorite: "Remove From Favorite"
     listing_favorite_products: Listing Favorite Products
     listing_favorite_products_users: Listing Favorite Product Users
+    user_count: User Count
