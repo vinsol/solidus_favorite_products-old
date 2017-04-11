@@ -6,13 +6,16 @@
       <tr>
         <th class="favorite-product-image"><%= Spree.t(:product_image) %></th>
         <th class="favorite-product-name"><%= Spree.t(:product_name) %></th>
-        <th class="favorite-product-action">Action</th>        
+        <th class="favorite-product-action">Action</th>
       </tr>
       </thead>
       <tbody>
       <% @favorite_products.each do |product| %>
         <tr class="<%= cycle('even', 'odd') %> favorite_product" id="favorite_product_<%= product.id %>">
-          <td class="favorite-product-image"><%= link_to small_image(product), product_path(product) %></td>
+          <td class="favorite-product-image"><%= link_to product_path(product) do %>
+          <%= image_tag product.display_image.attachment(:mini) %>
+          <% end %>
+          </td>
           <td class="favorite-product-name"><%= product.name %></td>
           <td class="favorite-product-remove"><%= link_to 'Remove', favorite_product_path(:id => product.id), :method => :delete, :remote => true, :confirm => 'Are you sure you want to remove the product?' %>
         </tr>
@@ -22,6 +25,6 @@
   <% else %>
     <p><%= Spree.t(:you_have_no_favorite_products_yet) %></p>
   <% end %>
-  
+
   <%= paginate @favorite_products %>
 </div>

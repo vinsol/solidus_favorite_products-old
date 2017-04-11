@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 # Provides basic authentication functionality for testing parts of your engine
-gem 'spree', github: 'spree/spree', branch: '3-2-stable'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
+gem 'solidus', '2.1.0'
+gem 'solidus_auth_devise'
 
 gem 'byebug', '~> 9.0.6'
 

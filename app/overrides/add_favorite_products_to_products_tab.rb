@@ -1,6 +1,6 @@
 Deface::Override.new(
-  virtual_path: 'spree/admin/shared/sub_menu/_product',
+  virtual_path: 'spree/admin/shared/_product_sub_menu',
   name: 'select_products_tab',
-  insert_bottom: "#sidebar-product",
+  insert_bottom: '[data-hook="admin_product_sub_tabs"]',
   text: %Q{ <%= tab :favorite_products %> }
 )

@@ -10,17 +10,17 @@ Spree Favorite Products
 Installation
 ------------
 
-Add spree_favorite_products to your Gemfile:
+Add solidus_favorite_products to your Gemfile:
 
 ```ruby
-gem 'spree_favorite_products', github: 'vinsol/spree_favorite_products'
+gem 'solidus_favorite_products', github: 'vinsol/spree_favorite_products'
 ```
 
 Bundle your dependencies and run the installation generator:
 
 ```shell
 bundle
-bundle exec rails g spree_favorite_products:install
+bundle exec rails g solidus_favorite_products:install
 ```
 
 Testing

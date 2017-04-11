@@ -26,7 +26,9 @@
       <% @favorite_products.each do |product| %>
           <tr <%= "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
             <td class="align-center"><%= product.sku rescue '' %></td>
-            <td class="align-center"><%= mini_image(product) %></td>
+            <td class="align-center">
+              <%= image_tag product.display_image.attachment(:mini) %>
+            </td>
             <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
             <td class="align-center"><%= product.display_price.to_html rescue '' %></td>
             <td class='align-center'><%= link_to product.favorite_users.count, users_admin_favorite_product_path(:id => product.id) %></td>
