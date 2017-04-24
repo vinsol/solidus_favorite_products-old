@@ -1,7 +1,7 @@
-Spree Favorite Products
+Solidus Favorite Products
 =======================
 
-* Spree Favorite Products is an extension that allows the user to mark/unkmark a product as favorite from the product page.
+* Solidus Favorite Products is an extension that allows the user to mark/unkmark a product as favorite from the product page.
 
 * Admin can view which products have been marked as favorite, and by which users, on the Admin end.
 
