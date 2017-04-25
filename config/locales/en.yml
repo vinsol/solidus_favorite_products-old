@@ -21,3 +21,5 @@ en:
     product_image: Product Image
     product_name: Product Name
     favorite_users: Favorite Users
+    are_you_sure_to_remove_product: Are you sure you want to remove the product?
+    login_to_add_favorite: Please Login to Add Favorite

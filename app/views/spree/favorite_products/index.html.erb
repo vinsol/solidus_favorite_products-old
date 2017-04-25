@@ -16,8 +16,8 @@
           <%= image_tag product.display_image.attachment(:mini) %>
           <% end %>
           </td>
-          <td class="favorite-product-name"><%= product.name %></td>
-          <td class="favorite-product-remove"><%= link_to 'Remove', favorite_product_path(:id => product.id), :method => :delete, :remote => true, :confirm => 'Are you sure you want to remove the product?' %>
+          <td class="favorite-product-name"><%= link_to product.name, product_path(product) %></td>
+          <td class="favorite-product-remove"><%= link_to 'Remove', favorite_product_path(id: product.id), method: :delete, remote: true, confirm: Spree.t(:are_you_sure_to_remove_product) %>
         </tr>
       <% end %>
       </tbody>
