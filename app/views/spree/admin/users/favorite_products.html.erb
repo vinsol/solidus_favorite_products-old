@@ -5,13 +5,13 @@
 
 
 <%= render 'spree/admin/users/sidebar' %>
-<%= render 'spree/admin/users/tabs', current: :favourite_products %>
+<%= render 'spree/admin/users/tabs', current: :favorite_products %>
 <%= render partial: 'spree/admin/users/user_page_actions' %>
 
 
-<div data-hook="account_my_favourite_products" class="account-my-favorite-products commonform">
-  <h3><%= Spree.t(:my_favourite_products) %></h3>
-  <% if @favourite_products.present? %>
+<div data-hook="account_my_favorite_products" class="account-my-favorite-products commonform">
+  <h3><%= Spree.t(:my_favorite_products) %></h3>
+  <% if @favorite_products.present? %>
     <table class="favorite-products order-summary" width="100%">
       <thead>
       <tr>
@@ -21,7 +21,7 @@
       </tr>
       </thead>
       <tbody>
-      <% @favourite_products.each do |product| %>
+      <% @favorite_products.each do |product| %>
         <tr class="<%= cycle('even', 'odd') %> favorite_product" id="favorite_product_<%= product.id %>">
           <td class="favorite-product-image"><%= link_to product_path(product) do %>
           <%= image_tag product.display_image.attachment(:mini) %>
@@ -34,8 +34,8 @@
       </tbody>
     </table>
   <% else %>
-    <p><%= Spree.t(:you_have_no_favourite_products_yet) %></p>
+    <p><%= Spree.t(:you_have_no_favorite_products_yet) %></p>
   <% end %>
 
-  <%= paginate @favourite_products %>
+  <%= paginate @favorite_products %>
 </div>

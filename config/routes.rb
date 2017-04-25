@@ -6,11 +6,11 @@ Spree::Core::Engine.routes.draw do
     end
 
     resources :products do
-      get :favourite_users, on: :member
+      get :favorite_users, on: :member
     end
 
     resources :users do
-      get :favourite_products, on: :member
+      get :favorite_products, on: :member
     end
   end
 
