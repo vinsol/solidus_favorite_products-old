@@ -2,12 +2,9 @@
 <% admin_breadcrumb(link_to @user.email, edit_admin_user_url(@user)) %>
 <% admin_breadcrumb(Spree.t(:favorite_products, scope: [:admin, :tab])) %>
 
-
-
 <%= render 'spree/admin/users/sidebar' %>
 <%= render 'spree/admin/users/tabs', current: :favorite_products %>
 <%= render partial: 'spree/admin/users/user_page_actions' %>
-
 
 <div data-hook="account_my_favorite_products" class="account-my-favorite-products commonform">
   <h3><%= Spree.t(:my_favorite_products) %></h3>
