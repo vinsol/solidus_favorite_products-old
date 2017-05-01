@@ -2,7 +2,7 @@ Spree::Core::Engine.routes.draw do
   # Add your extension routes here
   namespace :admin do
     resources :favorite_products, only: :index do
-      get :users, on: :member
+      get :users, on: :member, to: 'products#favorite_users'
     end
 
     resources :products do

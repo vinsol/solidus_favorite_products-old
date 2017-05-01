@@ -20,6 +20,6 @@ en:
     my_favorite_products: My Favorite Products
     product_image: Product Image
     product_name: Product Name
-    favorite_users: Favorites
+    favorites: Favorites
     are_you_sure_to_remove_product: Are you sure you want to remove the product?
     login_to_add_favorite: Please Login to Add Favorite
