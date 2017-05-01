@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::Admin::FavoriteProductsController do
+describe Spree::Admin::FavoriteProductsController, type: :controller do
   let(:role) { Spree::Role.create!(name: 'user') }
   let(:roles) { [role] }
   let(:product) { mock_model( Spree::Product) }
@@ -132,6 +132,28 @@ describe Spree::Admin::FavoriteProductsController do
       before do
         send_request
       end
+    end
+  end
+
+  describe 'GET users' do
+    let(:product) { mock_model(Spree::Product) }
+    let(:favorite_product) { mock_model(Spree::Product) }
+    let(:favorite_users) { double(ActiveRecord::Relation) }
+
+    def send_request
+      get :users, params: { id: product.id }
+    end
+
+
+    before do
+      allow(Spree::Product).to receive(:find_by).and_return(product)
+      allow(product).to receive(:favorite_users).and_return(favorite_users)
+      allow(favorite_users).to receive(:page).and_return(favorite_users)
+    end
+
+    it 'is expected to set favorite_users' do
+      expect(product).to receive(:favorite_users).and_return(favorite_users)
+      send_request
     end
   end
 end

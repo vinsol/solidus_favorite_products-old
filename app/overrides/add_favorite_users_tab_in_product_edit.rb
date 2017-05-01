@@ -4,7 +4,7 @@ Deface::Override.new(
   insert_bottom: '[data-hook="admin_product_tabs"]',
   text: %Q{
     <%= content_tag :li, class: ('active' if current == 'Favorite Products') do %>
-      <%= link_to Spree.t(:favorite_users), spree.favorite_users_admin_product_path(@product) %>
+      <%= link_to Spree.t(:favorites), spree.favorite_users_admin_product_path(@product) %>
     <% end if can?(:admin, Spree::Product) %>
   }
 )
