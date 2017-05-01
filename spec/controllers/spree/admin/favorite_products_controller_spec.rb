@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::Admin::FavoriteProductsController do
+describe Spree::Admin::FavoriteProductsController, type: :controller do
   let(:role) { Spree::Role.create!(name: 'user') }
   let(:roles) { [role] }
   let(:product) { mock_model( Spree::Product) }
@@ -75,32 +75,6 @@ describe Spree::Admin::FavoriteProductsController do
     it "renders favorite products template" do
       send_request
       expect(response).to render_template(:index)
-    end
-  end
-
-  describe "#users" do
-    before do
-      @users = [@user]
-      allow(@users).to receive(:page).and_return(@users)
-      allow(product).to receive(:favorite_users).and_return(@users)
-      @product = product
-      allow(Spree::Product).to receive(:find_by).with(:id => product.id.to_s).and_return(@product)
-    end
-
-    def send_request
-      get :users, params: { id: product.id }, as: :js
-    end
-
-    it 'fetches the product' do
-      expect(Spree::Product).to receive(:find_by).with(:id => product.id.to_s).and_return(@product)
-    end
-
-    it 'fetches the users who marked the product as favorite' do
-      expect(product).to receive(:favorite_users).and_return(@users)
-    end
-
-    after do
-      send_request
     end
   end
 
