@@ -34,8 +34,8 @@ module Spree
 
       def store_favorite_product_preference
         unless spree_current_user
-          session[:favorite_product_id] = params[:id]
-          redirect_to login_path, alert: 'Please Login to Add Favorite'
+          session[:spree_user_return_to] = product_path(id: params[:id], favorite_product_id: params[:id])
+          redirect_to login_path, notice: Spree.t(:login_to_add_favorite)
         end
       end
   end
