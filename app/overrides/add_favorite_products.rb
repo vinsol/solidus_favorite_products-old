@@ -4,13 +4,28 @@ Deface::Override.new(
   insert_after: '[data-hook="product_show"]',
   text: %Q{
     <%= javascript_tag do %>
-      <% if spree_user_signed_in? && params[:favorite_product_id].present? && params[:favorite_product_id].eql?(params[:id]) %>
-        $(document).ready(
-          function(){
+      var getQueryParams = function(qs) {
+        qs = qs.split('+').join(' ');
+
+        var params = {},
+          tokens,
+          re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+          params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+      }
+
+      $(document).ready(
+        function(){
+          var params = getQueryParams(document.location.search);
+          if(params['favorite_product_id'] != null){
             $('#mark-as-favorite').trigger('click');
           }
-        );
-      <% end %>
+        }
+      );
     <% end %>
   }
 )
