@@ -22,6 +22,7 @@ Deface::Override.new(
         function(){
           var params = getQueryParams(document.location.search);
           if(params['favorite_product_id'] != null){
+            $('#mark-as-favorite').attr('data-remote', true);
             $('#mark-as-favorite').trigger('click');
           }
         }
